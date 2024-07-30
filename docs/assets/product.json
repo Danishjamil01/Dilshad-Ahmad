@@ -1,0 +1,68 @@
+[
+  {
+    "image": "assets/images/product/1.png",
+    "name": "MACBOOK AIR",
+    "about": "Designed to go places.",
+    "price": "From ₹99900.00"
+  },
+  {
+    "image": "assets/images/product/2.png",
+    "name": "IPHONE 15 PRO",
+    "about": "Titanium",
+    "price": "From ₹134900.00"
+  },
+  {
+    "image": "assets/images/product/3.png",
+    "name": "APPLE WATCH SERIES 9",
+    "about": "Smarter. Brighter. Mighter.",
+    "price": "From ₹41900.00"
+  },
+  {
+    "image": "assets/images/product/4.png",
+    "name": "IPAD",
+    "about": "Loveable. Drawable. Magical.",
+    "price": "From ₹39900.00"
+  },
+  {
+    "image": "assets/images/product/5.png",
+    "name": "IPHONE 15",
+    "about": "Newphoria",
+    "price": "From ₹79900.00"
+  },
+  {
+    "image": "assets/images/product/6.png",
+    "name": "PAYMENT OPTIONS",
+    "about": "Flexible ways to pay. Plus instant savings and no cost EMI",
+    "price": "From ₹79900.00"
+  },
+  {
+    "image": "assets/images/product/7.png",
+    "name": "MACBOOK PRO",
+    "about": "Mind-blowing. Head-turning",
+    "price": "From ₹169900.00"
+  },
+  {
+    "image": "assets/images/product/8.png",
+    "name": "APPLE WATCH ULTRA 2",
+    "about": "Next-level adventure.",
+    "price": "From ₹89900.00"
+  },
+  {
+    "image": "assets/images/product/9.png",
+    "name": "IPAD PRO",
+    "about": "Supercharged by M2",
+    "price": "From ₹81900.00"
+  },
+  {
+    "image": "assets/images/product/10.png",
+    "name": "APPLEWATCH SE",
+    "about": "A great deal to love",
+    "price": "From ₹29900.00"
+  },
+  {
+    "image": "assets/images/product/11.png",
+    "name": "Arm candy. in all new-flavours.",
+    "about": "Shop the latest starp styles and colors.",
+    "price": "From ₹29900.00"
+  }
+]
