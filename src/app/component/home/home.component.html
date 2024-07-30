@@ -1,0 +1,301 @@
+<main>
+    <section class="main-section" id="home">
+        <div class="content">
+            <p class="greeting">{{'welcome' | translate}} Dilshad Cybrox!</p>
+            <h1 class="headline">{{'bestsolution' | translate}} <br> {{'andserv' | translate}}</h1>
+            <p class="description">
+                {{'maindesc' | translate}}
+            </p>
+            <button class="contact-button"><a style="text-decoration: none;color: #fff;" href="https://wa.me/919304820752">{{'contact' | translate}}</a></button>
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="first-flex-box">
+                <div class="img1">
+                    <div>
+                        <img src="../../../assets/images/dilshad4.png" alt=""
+                            style="height: auto;width: 100%;border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="">
+                    <div class="img2" x>
+                        <div><i class="fi fi-rr-alarm-clock" style="font-size: 40px;"></i></div>
+                        <div>
+                            <h3 style="margin: 0;">
+                                5+</h3>
+                            <p style="margin: 0;">{{'yearexp' | translate}}</p>
+                        </div>
+                    </div>
+                    <br>
+                    <img src="../../../assets/images/dilshad6.png" alt=""
+                        style="height: auto;width: 100%;border-radius: 10px;">
+                </div>
+                <div class="last-section">
+                    <span style="font-size: 22px;">{{'perfectsol' | translate}}</span>
+                </div>
+            </div>
+            <div class="sec-box">
+                <h2 style="font-size: 36px;">{{'bthought' | translate}}.</h2>
+
+                <p>
+                    {{'aboutdesc' | translate}}
+                </p>
+
+                <button class="contact-button"><a style="text-decoration: none;color: #fff;" href="https://wa.me/919304820752">{{'contact' | translate}}</a></button>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="resp-about">
+        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 10px;">
+            <div>
+                <img src="../../../assets/images/dilshad4.png" alt="" style="width: 100%;border-radius: 10px;">
+            </div>
+            <div>
+                <div style="background-color: #004d4d;color:#fff;padding: 15px;border-radius: 5px;margin-bottom: 10px;">
+
+                    <h3 style="margin: 0;">
+                        5+</h3>
+                    <p style="margin: 0;">{{'yearexp' | translate}}</p>
+                </div>
+                <div>
+                    <img src="../../../assets/images/dilshad6.png" alt="" style="width: 100%;border-radius: 10px;">
+                </div>
+            </div>
+
+        </div>
+        <div class="last-section">
+            <span style="font-size: 22px;">{{'perfectsol' | translate}}</span>
+        </div>
+    </div>
+
+
+    <div class="main-service-section" id="service">
+        <div style="display: flex;" class="flex-box">
+            <div style="width: 50%;" class="w1">
+                <h5 style="color: #F7A519;">{{'ourservices' | translate}}</h5>
+                <h2 style="font-size: 40px;">{{'explore' | translate}}</h2>
+            </div>
+            <div style="width:50%" class="w1">
+                {{'servicedesc' | translate}}
+            </div>
+        </div>
+
+
+        <div class="services-section  mt-5">
+            <div class="service ">
+                <h2 style="text-align: center;color: #F7A519;">{{'govtdoc' | translate}}</h2>
+                <ngx-slick-carousel class="carousel" #serviceslide="slick-carousel" [config]="slideConfig"
+                    (afterChange)="afterChange($event)">
+                    <div ngxSlickItem *ngFor="let slide of serviceObj" class="slide">
+                        <ul class="government-documents mt-5">
+                            <li class="document-item" (click)="openModal('serviceDetailsModal', slide)">
+                                <img src="{{slide.img}}" alt="Aadhaar">
+                                <br>
+                                <div class="document-content" style="text-align: center;">
+                                    <h3>{{slide.servicename | translate}}</h3>
+                                    <p>{{slide.description | translate}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+            <div class="slick-arrow">
+                <div (click)="servicePrevSlide()" [class.disabled]="currentSlideIndex === 0"><i
+                        class="fi fi-br-arrow-small-left"></i></div>
+                <div (click)="serviceNextSlide()" [class.disabled]="currentSlideIndex === totalSlides - 1"><i
+                        class="fi fi-br-arrow-small-right"></i></div>
+            </div>
+
+            <br><br>
+
+            <div class="service ">
+                <h2 style="text-align: center;color: #F7A519;">{{'apply' | translate}}</h2>
+                <ngx-slick-carousel class="carousel" #admissionslide="slick-carousel" [config]="slideConfig"
+                    (afterChanges)="afterChanges($event)">
+                    <div ngxSlickItem *ngFor="let slide of admissionServiceObj" class="slide">
+                        <ul class="Admission-form mt-5">
+                            <li class="Admission-list" (click)="openModal2('admissionServiceDetails' , slide)">
+                                <img src="{{slide.img}}" alt="Aadhaar">
+                                <br>
+                                <div class="Admission-content" style="text-align: center;">
+                                    <h3>{{slide.servicename}}</h3>
+                                    <p>{{slide.description}}</p>
+                                </div>
+                                <div class="overlay">
+                                    <span>View Details</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+            <div class="slick-arrow">
+                <div (click)="admissionPrevSlide()" [class.disabled]="currentSlidenumber === 0"><i
+                        class="fi fi-br-arrow-small-left"></i></div>
+                <div (click)="admissionNextSlide()" [class.disabled]="currentSlidenumber === totalSlides - 1"><i
+                        class="fi fi-br-arrow-small-right"></i></div>
+            </div>
+            <br><br>
+            <div class="ticket-service">
+                <h2>{{'ticketbooking' | translate}}</h2>
+                <div class="ticket-container">
+                    <div class="ticket-item" style="background-image: url('../../../assets/images/services/bus.png');">
+                        <span>{{'Bus' | translate}}</span>
+                    </div>
+                    <div class="ticket-item"
+                        style="background-image: url('../../../assets/images/services/train.png');">
+                        <span>{{'Train' | translate}}</span>
+                    </div>
+                    <div class="ticket-item"
+                        style="background-image: url('../../../assets/images/services/flight.jpg');">
+                        <span>{{'Flight' | translate}}</span>
+                    </div>
+                    <div class="ticket-item"
+                        style="background-image: url('../../../assets/images/services/hotel.jpg');">
+                        <span>{{'Hotel' | translate}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <section class="conatct-us" id="contact">
+        <div class="container mt-5">
+            <!-- Contact Us Section -->
+            <div class="contact-section">
+                <h1>{{'contact' | translate}}</h1>
+                <p class="lead">{{'reachme' | translate}}</p>
+                <div class="contact-options">
+                    <div class="contact-card">
+                        <i class="fi fi-rr-phone-call"></i>
+                        <h2>{{'call' | translate}}</h2>
+                        <a href="tel:+919304820752" class="btn btn-primary contact-button">+91 9304820752</a>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fi fi-brands-whatsapp" style="color: #25D366;"></i>
+                        <h2>{{'whatsus' | translate}}</h2>
+                        <a href="https://wa.me/919304820752" class="btn btn-success contact-button">{{'chatwhats' |
+                            translate}}</a>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fi fi-rr-envelope"></i>
+                        <h2>{{'mailus' | translate}}</h2>
+                        <a style="font-size: 15px;text-decoration: none;" href="mailto:info@example.com"
+                            class="contact-button">dilshadahmad143000&#64;gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- service-details-modal  -->
+    <div class="modal fade" id="serviceDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{'servicedetails' | translate}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <p style="text-align: center;">{{selectedService?.title | translate}}</p>
+                        <p style="text-align: center;">{{selectedService?.needdeddoc | translate}}</p>
+                        <li *ngIf="selectedService?.name">{{selectedService?.name | translate}}</li>
+                        <li *ngIf="selectedService?.address">{{selectedService?.address | translate}}</li>
+                        <li *ngIf="selectedService?.dob">{{selectedService?.dob | translate}}</li>
+                        <li *ngIf="selectedService?.mobile">{{selectedService?.mobile | translate}}</li>
+                        <li *ngIf="selectedService?.email">{{selectedService?.email | translate}}</li>
+                        <li *ngIf="selectedService?.aadhar">{{selectedService?.aadhar | translate}}</li>
+                        <li *ngIf="selectedService?.photo">{{selectedService?.photo | translate}}</li>
+                        <li *ngIf="selectedService?.pancard">{{selectedService?.pancard | translate}}</li>
+                        <li *ngIf="selectedService?.deathproof">{{selectedService?.deathproof | translate}}</li>
+                        <li *ngIf="selectedService?.familyohoto">{{selectedService?.familyohoto | translate}}</li>
+                        <li *ngIf="selectedService?.birth">{{selectedService?.birth | translate}}</li>
+                        <li *ngIf="selectedService?.income">{{selectedService?.income | translate}}</li>
+                        <li *ngIf="selectedService?.invitationcard">{{selectedService?.invitationcard | translate}}</li>
+                        <li *ngIf="selectedService?.weddingphotos">{{selectedService?.weddingphotos | translate}}</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'close' |
+                        translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service-details-modal end -->
+
+
+
+
+    <!-- service-details-modal  -->
+    <div class="modal fade admissionModal" id="admissionServiceDetails" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{'servicedetails' | translate}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+
+                    <div class="">
+                        <h5 style="text-align: center;color: #004d4d;">{{selectedAdmissionService?.allcollege}}</h5>
+
+
+                        <div class="colleges-list">
+                            <button (click)="routeTocollegeslist()"
+                                *ngIf="selectedAdmissionService?.vaishali">{{selectedAdmissionService?.vaishali}}</button>
+                            <button (click)="routeTocollegeslist()"
+                                *ngIf="selectedAdmissionService?.samastipur">{{selectedAdmissionService?.samastipur}}</button>
+                        </div>
+                    </div>
+                    <div class="container" *ngIf="selectedAdmissionService?.programs">
+                        <h1>{{selectedAdmissionService?.universityTitle}}</h1>
+                        <p>{{selectedAdmissionService?.universityDesc}}</p>
+
+                        <div class="program">
+                            <div *ngFor="let type of selectedAdmissionService?.programs">
+                                <h2>{{type?.type}}</h2>
+                                <div class="program-details">
+                                    <div *ngFor="let details of type?.details">
+                                        <ul>
+                                            <li>
+                                                <h3>{{details.program}}</h3>
+                                                <div class="requirements">
+                                                    <p><strong>{{'Duration' | translate}}:</strong>{{details.duration}}
+                                                    </p>
+                                                    <p><strong>{{'Eligibility' | translate}}:</strong>
+                                                        {{details.eligibility}}
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'close' |
+                        translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service-details-modal end -->
+</main>

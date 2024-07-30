@@ -1,0 +1,20 @@
+<div style="text-align: center;margin-top: 30px;">
+    <h1>List of colleges in Samastipur & Vaishali District</h1>
+</div>
+<div class="college-list-container">
+    <div class="college-cards" *ngFor="let list of admissionServiceObj">
+        <div class="college-card" *ngFor="let fff of list?.colleges" (click)="clickto(fff.link)">
+            <div class="college-header">
+                <h2>{{ fff?.name }}</h2>
+                <p>Affiliated to {{ fff?.affiliation }}</p>
+                <p style="color: #468847;">{{ fff?.location }}</p>
+            </div>
+            <div class="college-courses">
+                <h3>Courses:</h3>
+                <ul>
+                    <li *ngFor="let course of fff?.courses">{{ course }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
