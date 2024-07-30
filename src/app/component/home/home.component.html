@@ -53,19 +53,19 @@
 
 
     <div class="resp-about">
-        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 10px;" >
-            <div *ngFor="let img of bodyImgService">
-                <img src="{{img.img2}}" alt="" style="width: 100%;border-radius: 10px;">
+        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 5px;" >
+            <div >
+                <img *ngFor="let img of bodyImgService" src="{{img.img2}}" alt="" style="width: 100%;border-radius: 10px;">
             </div>
             <div>
-                <div style="background-color: #004d4d;color:#fff;padding: 15px;border-radius: 5px;margin-bottom: 10px;">
+                <div style="background-color: #004d4d;color:#fff;padding: 15px;border-radius: 5px;">
 
                     <h3 style="margin: 0;">
                         5+</h3>
                     <p style="margin: 0;">{{'yearexp' | translate}}</p>
                 </div>
-                <div *ngFor="let img of bodyImgService">
-                    <img src="{{img.img3}}" alt="" style="width: 100%;border-radius: 10px;">
+                <div class="mt-2">
+                    <img *ngFor="let img of bodyImgService" src="{{img.img3}}" alt="" style="width: 100%;border-radius: 10px;">
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
         <div class="services-section  mt-5">
             <div class="service ">
                 <h2 style="text-align: center;color: #F7A519;">{{'govtdoc' | translate}}</h2>
-                <ngx-slick-carousel class="carousel" #serviceslide="slick-carousel" [config]="slideConfig"
+                <ngx-slick-carousel id="servicess" class="carousel" #serviceslide="slick-carousel" [config]="slideConfig"
                     (afterChange)="afterChange($event)">
                     <div ngxSlickItem *ngFor="let slide of serviceObj" class="slide">
                         <ul class="government-documents mt-5">
@@ -118,7 +118,7 @@
 
             <div class="service ">
                 <h2 style="text-align: center;color: #F7A519;">{{'apply' | translate}}</h2>
-                <ngx-slick-carousel class="carousel" #admissionslide="slick-carousel" [config]="slideConfig"
+                <ngx-slick-carousel id="servicess" class="carousel" #admissionslide="slick-carousel" [config]="slideConfig"
                     (afterChanges)="afterChanges($event)">
                     <div ngxSlickItem *ngFor="let slide of admissionServiceObj" class="slide">
                         <ul class="Admission-form mt-5">
@@ -191,7 +191,7 @@
                         <i class="fi fi-rr-envelope"></i>
                         <h2>{{'mailus' | translate}}</h2>
                         <a style="font-size: 15px;text-decoration: none;" href="mailto:info@example.com"
-                            class="contact-button">dilshadahmad143000&#64;gmail.com</a>
+                            class="contact-button">dilshadahmad000143&#64;gmail.com</a>
                     </div>
                 </div>
             </div>
