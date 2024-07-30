@@ -6,6 +6,7 @@ import { ApiResponse } from '../../models/ApiResponse';
 import { Modal } from 'bootstrap';
 import { AdmissionService } from '../../models/AdmissionService';
 import { Router } from '@angular/router';
+import { BodyImg } from '../../models/BodyImg';
 declare var $: any;
 @Component({
   selector: 'app-home',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   serviceObj: Service[] = [];
   admissionServiceObj: AdmissionService[] = [];
   private modal: Modal
-
+  bodyImgService: BodyImg[] = [];
 
   constructor(private postService: PostmethodService, private router: Router) {
 
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
     this.getServiceData();
     this.getAdmissionServiceData();
     // this.openModal2('admissionServiceDetails',null);
+    this.getBodyData();
   }
 
   slideConfig = {
@@ -182,5 +184,13 @@ export class HomeComponent implements OnInit {
 
 
 
+  async getBodyData() {
+    const response: ApiResponse = await this.postService.apiCallsLocal('assets/json/bodyimg.json');
+    if (response.status === 0) {
+      this.bodyImgService = response.data;
+    } else {
+      console.log("data not found")
+    }
+  }
 
 }

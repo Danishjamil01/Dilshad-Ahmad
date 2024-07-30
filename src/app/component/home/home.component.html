@@ -13,10 +13,10 @@
 
     <section class="about" id="about">
         <div class="container">
-            <div class="first-flex-box">
+            <div class="first-flex-box" >
                 <div class="img1">
-                    <div>
-                        <img src="../../../assets/images/dilshad4.png" alt=""
+                    <div *ngFor="let img of bodyImgService">
+                        <img src="{{img.img2}}" alt=""
                             style="height: auto;width: 100%;border-radius: 10px;">
                     </div>
                 </div>
@@ -30,8 +30,10 @@
                         </div>
                     </div>
                     <br>
-                    <img src="../../../assets/images/dilshad6.png" alt=""
+                    <div *ngFor="let img of bodyImgService">
+                        <img src="{{img.img3}}" alt=""
                         style="height: auto;width: 100%;border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="last-section">
                     <span style="font-size: 22px;">{{'perfectsol' | translate}}</span>
@@ -51,9 +53,9 @@
 
 
     <div class="resp-about">
-        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 10px;">
-            <div>
-                <img src="../../../assets/images/dilshad4.png" alt="" style="width: 100%;border-radius: 10px;">
+        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 10px;" >
+            <div *ngFor="let img of bodyImgService">
+                <img src="{{img.img2}}" alt="" style="width: 100%;border-radius: 10px;">
             </div>
             <div>
                 <div style="background-color: #004d4d;color:#fff;padding: 15px;border-radius: 5px;margin-bottom: 10px;">
@@ -62,8 +64,8 @@
                         5+</h3>
                     <p style="margin: 0;">{{'yearexp' | translate}}</p>
                 </div>
-                <div>
-                    <img src="../../../assets/images/dilshad6.png" alt="" style="width: 100%;border-radius: 10px;">
+                <div *ngFor="let img of bodyImgService">
+                    <img src="{{img.img3}}" alt="" style="width: 100%;border-radius: 10px;">
                 </div>
             </div>
 
