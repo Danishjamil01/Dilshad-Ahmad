@@ -6,17 +6,18 @@
             <p class="description">
                 {{'maindesc' | translate}}
             </p>
-            <button class="contact-button"><a style="text-decoration: none;color: #fff;" href="https://wa.me/919304820752">{{'contact' | translate}}</a></button>
+            <button class="contact-button"><a style="text-decoration: none;color: #fff;"
+                    href="https://wa.me/919304820752">{{'contact' | translate}}</a></button>
         </div>
     </section>
 
 
     <section class="about" id="about">
         <div class="container">
-            <div class="first-flex-box" >
+            <div class="first-flex-box">
                 <div class="img1">
                     <div *ngFor="let img of bodyImgService">
-                        <img src="{{img.img2}}" alt=""
+                        <img *ngIf="img.img2" src="{{img.img2}}" alt=""
                             style="height: auto;width: 100%;border-radius: 10px;">
                     </div>
                 </div>
@@ -31,8 +32,8 @@
                     </div>
                     <br>
                     <div *ngFor="let img of bodyImgService">
-                        <img src="{{img.img3}}" alt=""
-                        style="height: auto;width: 100%;border-radius: 10px;">
+                        <img *ngIf="img.img3" src="{{img.img3}}" alt=""
+                            style="height: auto;width: 100%;border-radius: 10px;">
                     </div>
                 </div>
                 <div class="last-section">
@@ -46,16 +47,17 @@
                     {{'aboutdesc' | translate}}
                 </p>
 
-                <button class="contact-button"><a style="text-decoration: none;color: #fff;" href="https://wa.me/919304820752">{{'contact' | translate}}</a></button>
+                <button class="contact-button"><a style="text-decoration: none;color: #fff;"
+                        href="https://wa.me/919304820752">{{'contact' | translate}}</a></button>
             </div>
         </div>
     </section>
 
 
     <div class="resp-about">
-        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 5px;" >
-            <div >
-                <img *ngFor="let img of bodyImgService" src="{{img.img2}}" alt="" style="width: 100%;border-radius: 10px;">
+        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 5px;">
+            <div *ngFor="let img of bodyImgService">
+                <img *ngIf="img.img2" src="{{img.img2}}" alt="" style="width: 100%;border-radius: 10px;">
             </div>
             <div>
                 <div style="background-color: #004d4d;color:#fff;padding: 15px;border-radius: 5px;">
@@ -64,8 +66,8 @@
                         5+</h3>
                     <p style="margin: 0;">{{'yearexp' | translate}}</p>
                 </div>
-                <div class="mt-2">
-                    <img *ngFor="let img of bodyImgService" src="{{img.img3}}" alt="" style="width: 100%;border-radius: 10px;">
+                <div class="mt-2" *ngFor="let img of bodyImgService">
+                    <img *ngIf="img.img3" src="{{img.img3}}" alt="" style="width: 100%;border-radius: 10px;">
                 </div>
             </div>
 
@@ -91,8 +93,8 @@
         <div class="services-section  mt-5">
             <div class="service ">
                 <h2 style="text-align: center;color: #F7A519;">{{'govtdoc' | translate}}</h2>
-                <ngx-slick-carousel id="servicess" class="carousel" #serviceslide="slick-carousel" [config]="slideConfig"
-                    (afterChange)="afterChange($event)">
+                <ngx-slick-carousel id="servicess" class="carousel" #serviceslide="slick-carousel"
+                    [config]="slideConfig" (afterChange)="afterChange($event)">
                     <div ngxSlickItem *ngFor="let slide of serviceObj" class="slide">
                         <ul class="government-documents mt-5">
                             <li class="document-item" (click)="openModal('serviceDetailsModal', slide)">
@@ -118,8 +120,8 @@
 
             <div class="service ">
                 <h2 style="text-align: center;color: #F7A519;">{{'apply' | translate}}</h2>
-                <ngx-slick-carousel id="servicess" class="carousel" #admissionslide="slick-carousel" [config]="slideConfig"
-                    (afterChanges)="afterChanges($event)">
+                <ngx-slick-carousel id="servicess" class="carousel" #admissionslide="slick-carousel"
+                    [config]="slideConfig" (afterChanges)="afterChanges($event)">
                     <div ngxSlickItem *ngFor="let slide of admissionServiceObj" class="slide">
                         <ul class="Admission-form mt-5">
                             <li class="Admission-list" (click)="openModal2('admissionServiceDetails' , slide)">
@@ -146,21 +148,10 @@
             <br><br>
             <div class="ticket-service">
                 <h2>{{'ticketbooking' | translate}}</h2>
-                <div class="ticket-container">
-                    <div class="ticket-item" style="background-image: url('../../../assets/images/services/bus.png');">
-                        <span>{{'Bus' | translate}}</span>
-                    </div>
-                    <div class="ticket-item"
-                        style="background-image: url('../../../assets/images/services/train.png');">
-                        <span>{{'Train' | translate}}</span>
-                    </div>
-                    <div class="ticket-item"
-                        style="background-image: url('../../../assets/images/services/flight.jpg');">
-                        <span>{{'Flight' | translate}}</span>
-                    </div>
-                    <div class="ticket-item"
-                        style="background-image: url('../../../assets/images/services/hotel.jpg');">
-                        <span>{{'Hotel' | translate}}</span>
+                <div class="ticket-container" *ngFor="let img of bodyImgService">
+                    <div *ngIf="img.img" class="ticket-item"
+                        style="background-image: url({{img.img}});">
+                        <span>{{img.name | translate}}</span>
                     </div>
                 </div>
             </div>

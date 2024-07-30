@@ -13,10 +13,22 @@
     },
     {
         "id":4,
-        "img4":"assets/images/logo/1.png"
+        "img":"assets/images/services/bus.png",
+        "name":"Bus"
     },
     {
         "id":5,
-        "img5":"assets/images/logo/1.png"
+        "img":"assets/images/services/train.png",
+        "name":"Train"
+    },
+    {
+        "id":6,
+        "img":"assets/images/services/flight.jpg",
+        "name":"Flight"
+    },
+    {
+        "id":7,
+        "img":"assets/images/services/hotel.jpg",
+        "name":"Hotel"
     }
 ]

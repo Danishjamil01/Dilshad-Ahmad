@@ -1,7 +1,7 @@
 <nav>
     <div class="main-header">
-        <div class="logo" *ngFor="let img of bodyImgService">
-            <img src="{{img.img1}}" alt="">
+        <div class="logo">
+            <img  *ngFor="let img of bodyImgService" src="{{img.img1}}" alt="">
         </div>
         <ul class="nav-link">
             <li class="nav-item" (click)="redirectTo('home')">Home</li>
@@ -21,8 +21,8 @@
 
 <!-- resp-header  -->
 <div class="resp-logo">
-    <div class="logo" *ngFor="let img of bodyImgService">
-        <img src="{{img.img1}}" alt="">
+    <div class="logo">
+        <img *ngFor="let img of bodyImgService" src="{{img.img1}}" alt="">
     </div>
 
     <div class="lang">
