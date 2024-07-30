@@ -55,7 +55,7 @@
 
 
     <div class="resp-about">
-        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 5px;">
+        <div class="imb-box" style="display: flex;padding:55px 10px;gap: 2px;">
             <div *ngFor="let img of bodyImgService">
                 <img *ngIf="img.img2" src="{{img.img2}}" alt="" style="width: 100%;border-radius: 10px;">
             </div>
@@ -148,7 +148,7 @@
             <br><br>
             <div class="ticket-service">
                 <h2>{{'ticketbooking' | translate}}</h2>
-                <div style="display: flex;flex-wrap: wrap;">
+                <div style="display: flex;flex-wrap: wrap;justify-content: center;">
                     <div class="ticket-container" *ngFor="let img of bodyImgService">
                         <div *ngIf="img.img" class="ticket-item" style="background-image: url({{img.img}});">
                             <span>{{img.name | translate}}</span>
