@@ -148,10 +148,11 @@
             <br><br>
             <div class="ticket-service">
                 <h2>{{'ticketbooking' | translate}}</h2>
-                <div class="ticket-container" *ngFor="let img of bodyImgService">
-                    <div *ngIf="img.img" class="ticket-item"
-                        style="background-image: url({{img.img}});">
-                        <span>{{img.name | translate}}</span>
+                <div style="display: flex;flex-wrap: wrap;">
+                    <div class="ticket-container" *ngFor="let img of bodyImgService">
+                        <div *ngIf="img.img" class="ticket-item" style="background-image: url({{img.img}});">
+                            <span>{{img.name | translate}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
